@@ -1,0 +1,192 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111010;
+}
+
+.sidebar {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #181515;
+    padding: 0.4rem 0.8rem;
+}
+
+.sidebar .top .logo {
+    color: #ffff;
+    display: flex;
+    gap: 12px;
+    width: 25px;
+    height: 25px;
+    margin-left: 70px;
+    margin-top: 10px;
+}
+
+.sidebar ul h2 {
+    color: #bab1b1;
+}
+
+.sidebar ul li {
+    position: relative;
+    list-style-type: none;
+    height: 20px;
+    width: 90%;
+    margin: 0.8rem 28px auto;
+    line-height: 20px;
+}
+
+.sidebar .menu .menu-2 {
+    margin-top: 50px;
+}
+
+.sidebar .menu {
+    margin-top: 60px;
+}
+
+.sidebar ul li a {
+    color: #9d8a8a;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+}
+
+.sidebar ul li a:hover {
+    color: #6278ec;
+}
+
+.main-content {
+    position: absolute;
+    top: 0;
+    left: 250px;
+    width: 80%;
+    height: 160vh;
+}
+
+.navbar .user {
+    color: #ffff;
+    width: 120px;
+    height: 30px;
+    background-color: #292626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    gap: 10px;
+    cursor: pointer;
+    margin-right: -20px;
+}
+
+.navbar .user a {
+    opacity: 35%;
+    font-weight: 200;
+    font-size: 14px;
+    text-decoration: none;
+    color: #ffff;
+}
+
+.navbar .menu-navbar i {
+    color: #ffff;
+}
+
+.navbar .searchbar {
+    width: 265px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    border-radius: 12px;
+    background-color: #292626;
+    margin-left: -110px;
+}
+
+.navbar .searchbar i {
+    color: #ffff;
+    opacity: 45%;
+}
+
+.navbar .searchbar .search-input {
+    font-size: 16px;
+    color: #ffff;
+    margin-left: 14px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.navbar .menu-navbar a {
+    color: #ffff;
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: 300;
+}
+
+.navbar .menu-navbar a:hover {
+    color: #6278ec;
+}
+
+.navbar .menu-right {
+    display: flex;
+    gap: 8px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.album {
+    width: 200px;
+    color: #ffff;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.album img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.album .title {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.album .artist {
+    font-size: 14px;
+    padding: 5px;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 20px;
+    color: #ffff;
+    font-weight: bold;
+}
+
+.sidebar-item-active {
+    color: #6278EC;
+}

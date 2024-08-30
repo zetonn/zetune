@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    color: #fff;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+.sidebar {
+    width: 250px;
+    height: 600px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: #181818;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.sidebar-item-icon {
+    margin-right: 10px;
+}
+.sidebar-item-text {
+    font-size: 16px;
+}
+.sidebar-item:hover {
+    background-color: #282828;
+    color: #6278EC;
+}
+.sidebar-item-active {
+    background-color: #282828;
+    color: #6278EC;
+}
+
+.container-2 {
+    max-width: 800px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    background-color: #242424;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top:60px;
+}
+
+.tab.active {
+    background-color: #fff;
+    color: #000;
+}
+
+.collection-contain {
+    background-color: #181818;
+    width: 950px;
+    height: 400px;
+    padding: 20px;
+    border-radius: 20px;
+    overflow-y: auto;
+    margin-left: -5px;
+}
+
+.collection-contain::-webkit-scrollbar {
+    width: 0px;
+}
+
+.collection-header, .collection-item {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    padding: 15px 10px;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #333;
+   
+}
+
+.collection-header {
+    font-size: 0.9rem;
+    color: #b3b3b3;
+    font-weight: 500;
+   
+}
+
+.playlist-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.playlist-info img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.playlist-title {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.playlist-artist {
+    font-size: 0.9rem;
+    color: #b3b3b3;
+}

@@ -1,0 +1,139 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111010;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+}
+
+.left {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left img {
+    width: 600px;
+    border-radius: 15px;
+}
+
+.right {
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.right .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right .header h1 {
+    color: #6278EC;
+    font-weight: bold;
+    font-size: 64px;
+}
+
+.right .header p {
+    color: #ffff;
+    font-size: 15px;
+}
+
+.right form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.right form input {
+    width: 414px;
+    height: 56px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #2B2828;
+    color: #ffff;
+    border: none;
+    text-align: center;
+}
+
+.right form span:nth-child(3) {
+    margin-left: 270px;
+    text-decoration: none;
+    color: #ffff;
+    opacity: 50%;
+}
+
+.right form span:nth-child(5){
+    color: #ffff;
+}
+
+.right form button {
+    width: 281px;
+    height: 46px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: #3D3D3D;
+    color: #ffff;
+    margin-top: 10px;
+}
+
+.right .opsi {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.right .opsi .opsi-logo {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.right .opsi img {
+    width: 58px;
+}
+
+.right .opsi span{
+    color: #ffff;
+    margin-top: 50px;
+    display: flex;
+    gap: 5px;
+    margin-bottom: -100px;
+}
+
+.right .opsi span:nth-child(1) a {
+    color: #6278EC;
+    text-decoration: none;
+}
+
+
+
