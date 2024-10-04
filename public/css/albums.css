@@ -149,10 +149,9 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 30px;
 }
 
 .album {
@@ -161,6 +160,7 @@ body {
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
+    margin-top: 4rem;
 }
 
 .album img {

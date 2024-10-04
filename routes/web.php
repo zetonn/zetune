@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\Registercontroller;
+use App\Http\Controllers\spotifyController;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SpotifyAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +41,9 @@ Route::post('/login',[Logincontroller::class,'loginPost'])->name('login-proses')
 Route::view('/register',[Registercontroller::class,'Register'])->name('register');
 Route::post('/register',[Registercontroller::class,'registerPost'])->name('register-proses');
 
-
-
+Route::get('/search', [spotifyController::class, 'search']);
+Route::get('/home/{albumId}', [spotifyController::class, 'getAlbum'])->name('album');
+Route::get('/track/{trackId}', [spotifyController::class, 'getTrack']);
+// Route::get('/play/{trackId}', [SpotifyController::class, 'gatTrack']);
+// Route::get('/callback', [SpotifyController::class, 'callback'])->name('callback');
+// Route::get('/play', [SpotifyController::class, 'play'])->name('play');

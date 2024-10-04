@@ -43,8 +43,6 @@
                     </div>
                     <span>Don't have account?<a href="{{route('register')}}">Sign up</a></span>
                 </div>
-                   
-               
             </form>
         </div>
     </div>

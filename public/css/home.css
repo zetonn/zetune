@@ -525,62 +525,56 @@ body {
     color: #ffff;
 }
 
-.play-music .content-music .display-music h4 {
+/* .play-music .content-music .display-music h4 {
     margin-top: 20px;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .play-music .content-music .display-music p {
     font-size: 11px;
     font-weight: 500;
     margin-top: 5px;
+} */
+
+.play-music .content-music .display-music .song-info p {
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .play-music .content-music .display-music img {
-    width: 236px;
-    height: 154px;
+    width: 250px;
+    height: 200px;
     border-radius: 10px;
 }
 
-.time-music {
-    margin-bottom: 30px;
+.song-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 5px;
 }
 
-.time-music .bar-time{
-    width: 100%;
-    height: 5px;
-    border-radius: 5px;
-    opacity: 50%;
-    background-color: #D9D9D9;
+.artist-name {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.progress-container {
     display: flex;
-}
-
-.time-music .bar-time .bar-time2 {
-    width: 50%;
-    height: 5px;
-    background-color: #38729b;
-    border-radius: 5px; 
-}
-
-.time-music .bar-time .bullet {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: #38729b;
-    position: absolute;
-    margin: -2.4px 80px;
-}
-
-.time-music {
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    margin-top: 20px;
+    margin: 10px 0;
 }
 
-.time-music p {
-    font-size: 11px;
+.progress-bar {
+    width: 100%;
+    margin: 0 10px;
+}
+
+.progress-bar input[type="range"] {
+    width: 100%;
+    accent-color: #ffff;
 }
 
 .controls-music {
@@ -628,4 +622,35 @@ body {
 
 .content-music .controls-2 span {
     font-size: 11px;
+}
+
+.search-result {
+    margin-left: 20px;
+}
+
+.search-result h1 {
+    color: #ffff;
+    font-weight: bold;
+}
+
+.content-result {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    margin-top: 20px;
+}
+
+.content-result a {
+    text-decoration: none;
+    color: #ffff;
+}
+
+.album img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.album {
+    text-align: center;
 }

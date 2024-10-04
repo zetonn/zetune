@@ -72,10 +72,10 @@
                         <a href="#">PODCAST</a>
                     </div>
                
-                    <form>
+                    <form action="{{ url('/search') }}" method="get">
                         <div class="searchbar">
                             <i class='bx bx-search bx-sm' ></i>
-                            <input type="search" class="search-input" placeholder="Type here to search">
+                            <input type="search" name="query" class="search-input" placeholder="Type here to search">
                         </div>
                     </form>
                     
@@ -93,48 +93,9 @@
             </div>
 
             <h1>Popular Album</h1>
-    <div class="container">
-        <div class="album">
-            <img src="{{asset('img/like-that.jpeg')}}" alt="Like That">
-            <div class="title">Lagu kece🕶️</div>
-            <div class="artist">Album</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/beatiful-in-white.jpeg')}}" alt="Beatiful In White">
-            <div class="title">Playlist nikahan</div>
-            <div class="artist">Album</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/manusia.jpeg')}}" alt="Manusia">
-            <div class="title">Lagu enak</div>
-            <div class="artist">Album</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/juicy-luicy.jpeg')}}" alt="Juicy Luicy">
-            <div class="title">Gokill</div>
-            <div class="artist">Album</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/sos.jpeg')}}" alt="SOS">
-            <div class="title">SOS</div>
-            <div class="artist">Album</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/sour.jpeg')}}" alt="Sour">
-            <div class="title">Sour</div>
-            <div class="artist">Album</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/wcbf4.jpeg')}}" alt="We Cant Be Friends">
-            <div class="title">We Cant Be Friends</div>
-            <div class="artist">Album</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/love-on.jpeg')}}" alt="Love On">
-            <div class="title">Playlist Romance</div>
-            <div class="artist">Album</div>
-        </div>
-    </div>
+
+            
+
     </div>
 
            
