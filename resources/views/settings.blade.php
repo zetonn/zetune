@@ -17,21 +17,21 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            <a href="{{route('home.index')}}"><i class='bx bx-chevron-left bx-sm' style="color: #ffff;"></i></a>
+            <a href="{{route('user.home.index')}}"><i class='bx bx-chevron-left bx-sm' style="color: #ffff;"></i></a>
             <div class="sidebar-item ">
-                <a href="{{route('user.index')}}" style="text-decoration:none;color:#ffff;">
+                <a href="{{route('user.user.index')}}" style="text-decoration:none;color:#ffff;">
                     <i class="sidebar-item-icon fas fa-user"></i>
                     <span class="sidebar-item-text"><i class='bx bx-user'></i>User profile</span>
                 </a>
             </div>
             <div class="sidebar-item ">
-            <a href="{{route('user.playlist')}}" style="text-decoration:none;color:#ffff;">
+            <a href="{{route('user.user.playlist')}}" style="text-decoration:none;color:#ffff;">
                     <i class="sidebar-item-icon fas fa-list"></i>
                     <span class="sidebar-item-text"><i class='bx bxs-playlist' ></i>Playlists</span>
                 </a>   
             </div>
             <div class="sidebar-item sidebar-item-active">
-            <a href="{{route('user.index')}}" style="text-decoration:none;color:#ffff;">
+            <a href="{{route('user.user.index')}}" style="text-decoration:none;color:#ffff;">
                 <i class="sidebar-item-icon fas fa-cog"></i>
                 <span class="sidebar-item-text"><i class='bx bx-cog' ></i>Settings</span>
             </a>
@@ -106,6 +106,8 @@
                 </div>
             </div>
         </div>
+
+        <a href="{{route('logout')}}"><button>Logout</button></a>
     </div>
       
         

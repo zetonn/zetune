@@ -26,13 +26,13 @@
                 <div class="menu-1">
                     <h2>MENU</h2>
                     <li>
-                        <a href="{{route('home.index')}}">
+                        <a href="{{route('user.home.index')}}">
                             <span class="nav-item">Explore</span>
             
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('home.genres')}}">
+                        <a href="{{route('user.home.genres')}}">
                             <span class="nav-item">Genres</span>
             
                         </a>
@@ -47,13 +47,13 @@
                 <div class="menu-2">
                     <h2>LIBRARY</h2>
                     <li>
-                        <a href="{{route('home.albums')}}">
+                        <a href="{{route('user.home.albums')}}">
                             <span class="nav-item ">Albums</span>
             
                         </a>
                     </li>
                     <li>
-                    <a href="{{route('home.favorite')}}">
+                    <a href="{{route('user.home.favorite')}}">
                             <span class="nav-item">Favorite</span>
             
                         </a>
@@ -87,54 +87,32 @@
     
                         <div class="user" >
                             <i class='bx bx-user' ></i>
-                            <a href="{{route('user.index')}}">Briantoro</a>
+                            <a href="{{route('user.user.index')}}">Briantoro</a>
                         </div>
                     </div>
             </div>
 
             <h1>Artist</h1>
-    <div class="container">
-        <div class="album">
-            <img src="{{asset('img/like-that.jpeg')}}" alt="Like That">
-            <div class="title">Kendrick Lamar</div>
-            <div class="artist">Artist</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/beatiful-in-white.jpeg')}}" alt="Beatiful In White">
-            <div class="title">Shane Filan</div>
-            <div class="artist">Artist</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/manusia.jpeg')}}" alt="Manusia">
-            <div class="title">Tulus</div>
-            <div class="artist">Artist</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/juicy-luicy.jpeg')}}" alt="Juicy Luicy">
-            <div class="title">Sentimental</div>
-            <div class="artist">Artist</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/sos.jpeg')}}" alt="SOS">
-            <div class="title">SZA</div>
-            <div class="artist">Artist</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/sour.jpeg')}}" alt="Sour">
-            <div class="title">Olivia Rodrigo</div>
-            <div class="artist">Artist</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/wcbf4.jpeg')}}" alt="We Cant Be Friends">
-            <div class="title">Ariana Grande</div>
-            <div class="artist">Artist</div>
-        </div>
-        <div class="album">
-            <img src="{{asset('img/love-on.jpeg')}}" alt="Love On">
-            <div class="title">Selena Gomez</div>
-            <div class="artist">Artsit</div>
-        </div>
-    </div>
+        <div class="container">
+        @if(isset($artist) > 0)
+                    @foreach($artist as $ar)
+                        @if(isset($ar['album']['images'][0]['url']))
+                            <div class="album">
+                                <img src="{{ $ar['album']['images'][0]['url'] }}" alt="{{ $ar['name'] }}">
+                                <div class="title">{{ $ar['name'] }}</div>
+                                <div class="artist">{{ $ar['artists'][0]['name'] }}</div>
+                            </div>
+                        @else
+                            <div class="album">
+                                <p>Gambar tidak tersedia</p>
+                                <div class="title">{{ $ar['name'] }}</div>
+                                <div class="artist">{{ $ar['artists'][0]['name'] }}</div>
+                            </div>
+                        @endif
+                    @endforeach
+                @else
+            <p>Tidak ada artis yang ditemukan.</p>
+        @endif
     </div>
 
            

@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\DataMusicController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\Registercontroller;
 use App\Http\Controllers\spotifyController;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SpotifyAuthController;
+use App\Models\dataMusic;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,24 +21,30 @@ use App\Http\Controllers\SpotifyAuthController;
 |
 */
 
-Route::view('/','home')->name('home.index');
+Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], function() {
+    Route::get('/home', [HomeController::class, 'index'])->name('home.index');
+    Route::get('/profile',[HomeController::class, 'showUserProfile'])->name('user.index');
+    Route::get('/home/albums',[HomeController::class, 'showAlbum'])->name('home.albums');
+    Route::get('/home/artists?ids={id}',[spotifyController::class, 'getArtist'])->name('home.artist');
+    //Route::get('/home/artist',[HomeController::class, 'showArtist'])->name('home.artist');
+    Route::get('/home/genres',[HomeController::class, 'showGenres'])->name('home.genres');
+    Route::get('/home/favorite',[HomeController::class, 'showFavorite'])->name('home.favorite');
+    Route::get('/profile/playlist',[HomeController::class, 'showPlaylist'])->name('user.playlist');
+    Route::get('/profile/settings',[HomeController::class, 'showSettings'])->name('user.settings');
 
-Route::view('/profile','userprofile')->name('user.index');
+    Route::get('/dashboard-admin', [DataMusicController::class, 'index'])->name('index.admin');
+    Route::get('/dashboard-admin/create', [DataMusicController::class, 'create'])->name('create.data');
+    Route::post('/dashboard-admin/create', [DataMusicController::class, 'store'])->name('store.data');
 
-Route::view('/home/albums','albums')->name('home.albums');
+    Route::get('/dashboard-admin/edit/{id}', [DataMusicController::class, 'edit'])->name('edit.data');
+    Route::put('/dashboard-admin/update/{id}', [DataMusicController::class, 'update'])->name('update.data');
+    Route::delete('/dashboard-admin/delete/{id}', [DataMusicController::class, 'destroy'])->name('delete.data');
+});
 
-Route::view('/home/artist','artist')->name('home.artist');
 
-Route::view('/home/genres','genres')->name('home.genres');
-
-Route::view('/home/favorite','favorite')->name('home.favorite');
-
-Route::view('/profile/playlist','playlist')->name('user.playlist');
-
-Route::view('/profile/settings','settings')->name('user.settings');
-
-Route::view('/login',[Logincontroller::class,'Login'])->name('login');
+Route::get('/',[Logincontroller::class,'Login'])->name('login');
 Route::post('/login',[Logincontroller::class,'loginPost'])->name('login-proses');
+Route::get('/logout',[Logincontroller::class,'logout'])->name('logout');
 
 
 Route::view('/register',[Registercontroller::class,'Register'])->name('register');

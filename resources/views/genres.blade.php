@@ -26,7 +26,7 @@
                 <div class="menu-1">
                     <h2>MENU</h2>
                     <li>
-                        <a href="{{route('home.index')}}">
+                        <a href="{{route('user.home.index')}}">
                             <span class="nav-item">Explore</span>
             
                         </a>
@@ -38,7 +38,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('home.artist')}}">
+                        <a href="{{route('user.home.artist')}}">
                             <span class="nav-item ">Artist</span>
             
                         </a>
@@ -47,13 +47,13 @@
                 <div class="menu-2">
                     <h2>LIBRARY</h2>
                     <li>
-                        <a href="{{route('home.albums')}}">
+                        <a href="{{route('user.home.albums')}}">
                             <span class="nav-item ">Albums</span>
             
                         </a>
                     </li>
                     <li>
-                    <a href="{{route('home.favorite')}}">
+                    <a href="{{route('user.home.favorite')}}">
                             <span class="nav-item">Favorite</span>
             
                         </a>
@@ -87,7 +87,7 @@
     
                         <div class="user" >
                             <i class='bx bx-user' ></i>
-                            <a href="{{route('user.index')}}">Briantoro</a>
+                            <a href="{{route('user.user.index')}}">Briantoro</a>
                         </div>
                     </div>
             </div>

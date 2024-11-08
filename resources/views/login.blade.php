@@ -49,6 +49,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    @if($message = Session::get('success'))
+
+        <script>
+           swal("Good job!", "You clicked the button!", "success");
+        </script>
+
+    @endif
     @if($message = Session::get('failed'))
 
         <script>

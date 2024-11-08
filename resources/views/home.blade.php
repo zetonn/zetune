@@ -32,13 +32,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('home.genres')}}">
+                        <a href="{{route('user.home.genres')}}">
                             <span class="nav-item">Genres</span>
             
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('home.artist')}}">
+                        
                             <span class="nav-item">Artist</span>
             
                         </a>
@@ -47,13 +47,13 @@
                 <div class="menu-2">
                     <h2>LIBRARY</h2>
                     <li>
-                        <a href="{{route('home.albums')}}">
+                        <a href="{{route('user.home.albums')}}">
                             <span class="nav-item">Albums</span>
             
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('home.favorite')}}">
+                        <a href="{{route('user.home.favorite')}}">
                             <span class="nav-item">Favorite</span>
             
                         </a>
@@ -89,30 +89,14 @@
     
                         <div class="user" >
                             <i class='bx bx-user' ></i>
-                            <a href="{{route('user.index')}}">Briantoro</a>
+                            <a href="{{route('user.user.index')}}">Admin</a>
                         </div>
                     </div>
             </div>
 
             <div class="container">
                 
-                @if(isset($results['tracks']['items']))
-                <div class="search-result">
-                <h1>Search Results</h1>
-                    <div class="content-result">
-                        @foreach($results['tracks']['items'] as $track)
-                            <a href="{{ url('/home/' . $track['album']['id']) }}">
-                                <div class="album">
-                                    <img src="{{ $track['album']['images'][0]['url'] }}" alt="We Cant Be Friends">
-                                    <div class="title"> {{ $track['name'] }}</div>
-                                    <div class="artist">{{ $track['artists'][0]['name'] }}</div>
-                                </div>
-                            </a>
-                        @endforeach
-                    </div>
-                </div>
-                   
-                @else
+          
                     
                         <div class="hero">
                             <p>Trending New Hits</p>
@@ -280,10 +264,8 @@
                                     <h4>Player</h4>
                                 </div>
                                 <div class="content-music">
-                                        @if(!isset($results) && !isset($album))
-
                                         <div class="display-music">
-                                            <img src="{{ asset('img/no-photo.jpg') }}" alt="">
+                                            <img src="" alt="">
                                             <div class="song-info">
                                                 <p class="song-title">
                                                     No Song Selected
@@ -300,38 +282,12 @@
                                                 <span> 00:00 </span>
                                             </div>
                                         </div>
-                                       
-                                        @else
-
-                                        <div class="display-music">
-                                            <img src="{{ $album['images'][0]['url'] }}" alt="">
-                                            <div class="song-info">
-                                                <p class="song-title">
-                                                    {{$album['name']}}
-                                                </p>
-                                                <p class="artist-name">
-                                                    @foreach($album['artists'] as $artist)
-                                                        {{ $artist['name'] }}@if(!$loop->last), @endif
-                                                    @endforeach
-                                                </p>
-                                            </div>
-                                            <div class="progress-container">
-                                                <span> 4:34 </span>
-                                                <div class="progress-bar">
-                                                <input max="100" min="0" type="range" value="50"/>
-                                                </div>
-                                                <span> 2:14 </span>
-                                            </div>
-                                        </div>
                                       
-                                        
-                                        @endif
                                     <div class="controls-music">
                                         <div class="controls-1">
                                             <i class='bx bx-repeat'></i>
                                             <i class='bx bx-skip-next'></i>
-                                            <i class='bx bx-play bx-md'></i>
-                                            <!-- <button id="togglePlay">Toggle Play</button> -->
+                                            <button id="togglePlay"><i class='bx bx-play bx-md'></i></button>
                                             <i class='bx bx-skip-next'></i>
                                             <i class='bx bx-shuffle' ></i>
                                         </div>
@@ -344,14 +300,15 @@
                                 </div>
 
                             </div>
+
                         </div>
-                @endif
+                
             </div>
             <script src="https://sdk.scdn.co/spotify-player.js"></script>
             <script>
 
                 window.onSpotifyWebPlaybackSDKReady = () => {
-                    const token = 'BQBA2r9aqBXJdLWLy9IQSFH1fT0bEIKx7bmnpBikLKRjHcDzmd-5PmVgsqzR6IZ1yaR3bVUT6sHTIwW6Ikj4A59o0BdyudG0ntQygV_6cIF80MyY8VkW_tjPo-3svJPAWf9i9k0Rxby1gbC_TJ3xuSyiLnG8EQ3bBZbcWBG0TcNyN4meOT2BSZSc4hJLphfkmQ7E797WKDCcB7XLHcpPCvM';
+                    const token = 'BQA_oByqP-PP0t7wLqq1U4XMydPQNxVQntbJC5My4wg0nOTeOaMLiRPUDU6Kjp13m6KzOrbLEBe7_0Etx-_D5nP4aAM1FjLlYKqNKmj99k0cg3-HSQTe9z5jywqjRsM3WmpWcUKADwXzk-xo3Nx1zKrYlud8a0-23iOJsMcZoSHIODEg9_dFzVS3WBtgCza5N6IGNwZL5JiD9Svnx5XSeig';
                     const player = new Spotify.Player({
                         name: 'Web Playback SDK Quick Start Player',
                         getOAuthToken: cb => { cb(token); },
@@ -387,14 +344,26 @@
                         console.error(message);
                     });
 
-                    player.connect().then(success => {
+                    player.connect().then((success) => {
                         if (success) {
                             console.log('The Web Playback SDK successfully connected to Spotify!');
+                            console.log(player);
+                            
                         }
                     });
 
                     document.getElementById('togglePlay').onclick = function() {
-                        player.togglePlay();
+                        // player.nextTrack();
+
+                        
+                        player.togglePlay().then( async ()=>{
+                            // await playTrack(device_id, trackUri);
+                            console.log("Playing!..");
+                            console.log(player.device_id);
+                            
+                            
+                        });
+                        
                     };
 
                     // Fungsi untuk mengambil track_uri dari URL
@@ -415,26 +384,35 @@
                     function playTrack(device_id, trackUri) {
                         // Pastikan trackUri dalam format yang benar
                         const uri = `spotify:track:${trackUri}`;
-
+                        var arrTrack = [];
+                        
+                        arrTrack.push(uri); 
                         // Debugging
                         console.log("Device ID:", device_id);
                         console.log("Track URI:", uri);
+                        console.log("Track URis", arrTrack);
+                        
 
                         fetch(`https://api.spotify.com/v1/me/player/play?device_id=${device_id}`, {
                             method: 'PUT',
                             body: JSON.stringify({
-                                uris: [uri] // Pastikan trackUri dalam format yang benar
+                                uris: arrTrack,
+                                offset:{position: 0},
+                                position_ms:0
                             }),
                             headers: {
                                 'Content-Type': 'application/json',
                                 'Authorization': `Bearer ${token}` // Pastikan token valid dan memiliki scope yang tepat
                             },
-                        }).then(response => {
+                        }).then(async response => {
                             if (response.ok) {
                                 console.log('Track is playing');
                             } else {
-                                console.error('Failed to play track:', response.statusText);
-                                return response.json(); // Dapatkan detail error
+                                var res = await response;
+                                console.error('Failed to play track:');
+                                console.log(await res.json());
+                                
+                                // return response.json(); // Dapatkan detail error
                             }
                         }).catch(error => {
                             console.error('Error playing track:', error);
@@ -445,5 +423,6 @@
 
             </script>
             <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+            
 </body>
 </html>

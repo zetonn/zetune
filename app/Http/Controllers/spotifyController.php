@@ -43,4 +43,10 @@ class spotifyController extends Controller
         return view('home', ['album' => $album]);
     }
 
+    public function getArtist($ids)
+    {
+        $artist = $this->spotifyService->getArtist($ids);
+        return view('artist',['artist' => $artist]);
+    }
+
 }

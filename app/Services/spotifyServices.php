@@ -5,6 +5,7 @@ namespace App\Services;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
+use InvalidArgumentException;
 
 class spotifyServices
 {
@@ -79,5 +80,18 @@ class spotifyServices
     ]);
     return json_decode($response->getBody()->getContents(), true);
    }
+
+   public function getArtist($ids = '2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6') {
+
+    $response = $this->client->get("https://api.spotify.com/v1/artists?ids={$ids}", [
+        'headers' => [
+            'Authorization' => 'Bearer ' . $this->token,
+        ],
+    ]);
+    return json_decode($response->getBody()->getContents(), true);
+
+   }
+  
+  
 
 }
